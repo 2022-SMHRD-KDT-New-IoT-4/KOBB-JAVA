@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.db.ConnectDB;
+
 import com.kobb.model.UserDAO;
 import com.kobb.model.UserDTO;
 
@@ -16,8 +16,8 @@ public class JoinProgram implements Command {
 
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		System.out.println("서버 요청이 들어옴!");
-		ConnectDB connectDB = ConnectDB.getInstance();
 		String result = null;
 
 		String user_shop_name = request.getParameter("user_shop_name");
@@ -43,7 +43,7 @@ public class JoinProgram implements Command {
 			// result  "";
 		}
 		
-		String returns = connectDB.connectionDB(user_id, user_pw, user_phone, user_shop_name);
+		
 		
 		return result;
 	}
