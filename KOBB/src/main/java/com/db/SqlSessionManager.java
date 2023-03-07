@@ -14,7 +14,7 @@ public class SqlSessionManager {
 
 		static {
 			// 1. 읽을 설정 파일에 대한 경로 문자열로 지정
-			String resource = "com/smhrd/db/mybatis-config.xml";
+			String resource = "com/db/mybatis-config.xml";
 			// 2. 설정파일을 읽어 데이터베이스 연결
 			InputStream inputStream;
 			try {
