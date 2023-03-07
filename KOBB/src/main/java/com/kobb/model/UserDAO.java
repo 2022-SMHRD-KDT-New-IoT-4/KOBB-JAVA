@@ -23,6 +23,20 @@ public class UserDAO {
 			
 			
 		}
+		
+		//로그인 
+				public UserDTO login(UserDTO dto) {
+					UserDTO row = null;
+					SqlSession sqlSession = sqlSessionFactory.openSession(true);
+					try {
+						row = sqlSession.selectOne("com.kobb.model.UserDAO.login", dto);
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						sqlSession.close();
+					}
+					return row;
+				}
 
 
 	

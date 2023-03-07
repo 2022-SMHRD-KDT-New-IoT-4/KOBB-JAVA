@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.usercontrolloer.Command;
 import com.usercontrolloer.JoinProgram;
+import com.usercontrolloer.LoginProgram;
 
 
 @WebServlet("*.do")
@@ -23,6 +24,7 @@ public class FrontController extends HttpServlet {
 	public void init() throws ServletException {
 	map = new HashMap<>();
 	map.put("Join.do", new JoinProgram());
+	map.put("Login.do", new LoginProgram());
 	}
 
 

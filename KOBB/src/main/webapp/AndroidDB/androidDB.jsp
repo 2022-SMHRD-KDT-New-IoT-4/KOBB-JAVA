@@ -1,10 +1,10 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="com.db.ConnectDB"%>
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%
 
-   ConnectDB connectDB = ConnectDB.getInstance();
+  // ConnectDB connectDB = ConnectDB.getInstance();
 
 //한글 인코딩 부분
 	request.setCharacterEncoding("utf-8");
@@ -18,10 +18,10 @@
   
    
 	
-   String returns = connectDB.connectionDB(user_id, user_pw, user_phone, user_shop_name);
+ //  String returns = connectDB.connectionDB(user_id, user_pw, user_phone, user_shop_name);
    
-   System.out.println(returns);
+  // System.out.println(returns);
 
    // 안드로이드로 전송
-   out.println(returns);
+  // out.println(returns);
 %>

@@ -29,6 +29,9 @@ public class UserDTO {
 		this.user_shop_name = user_shop_name;
 		this.user_phone = user_phone;
 	}
+	public UserDTO() {
+		
+	}
 
 	public String getUser_id() {
 		return user_id;
