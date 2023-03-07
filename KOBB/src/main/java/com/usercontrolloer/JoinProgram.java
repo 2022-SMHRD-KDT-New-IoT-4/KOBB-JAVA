@@ -37,7 +37,7 @@ public class JoinProgram implements Command {
 		if(row>0) {
 			request.getSession().setAttribute("user_shop_name", dao);
 			// 성공 시 어디로 넘어가지?
-			// result "";
+			result = "Join.do";
 		}else {
 			// 실패 시는 ?
 			// result  "";
