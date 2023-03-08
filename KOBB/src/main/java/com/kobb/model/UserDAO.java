@@ -7,8 +7,9 @@ import org.apache.ibatis.session.SqlSessionManager;
 public class UserDAO {
 		private SqlSessionFactory sqlSessionFactory = com.db.SqlSessionManager.getSqlSession();
 		
+		
+		// 회원가입
 		public int join(UserDTO dto) {
-			
 			int row = 0;
 			SqlSession session = sqlSessionFactory.openSession(true);
 			try {

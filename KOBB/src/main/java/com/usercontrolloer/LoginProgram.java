@@ -17,7 +17,8 @@ public class LoginProgram implements Command {
 			throws ServletException, IOException {
 		
 		System.out.println("값이 들어오니?");
-		String result = null ;
+		// 여기 result 는 null 값이여야만 함!~
+		String result =null;
 				 
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
@@ -34,7 +35,9 @@ public class LoginProgram implements Command {
 		
 		if(row != null) {
 			request.getSession().setAttribute("Login_page", row);
+			
 		}
+	
 		
 	
 		return result;

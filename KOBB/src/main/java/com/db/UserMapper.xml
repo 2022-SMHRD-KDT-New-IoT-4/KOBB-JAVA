@@ -7,10 +7,11 @@
 
 <mapper namespace="com.kobb.model.UserDAO">
 	<!-- join구문 -->
-	<insert id="join" parameterType="UserDTO">
+	<insert id="join" parameterType="UserDTO">	
 		insert into user_tb
-		values
-		(#{user_id},#{user_pw},#{user_phone},#{user_shop_name},sysdate)
+	    values
+	    (#{user_id},#{user_pw},#{user_phone},#{user_shop_name},sysdate)
+		
 	</insert>
 	<!-- Login 구문 -->
 	<select id="login" parameterType="UserDTO" resultType="UserDTO">
@@ -18,5 +19,5 @@
 		from user_tb
 		where user_id = #{user_id} and user_pw = #{user_pw}
 	</select>
-	
+
 </mapper>

@@ -22,7 +22,7 @@ public class UserDTO {
 
 	
     // JoinProgram
-	public UserDTO(String user_id, String user_pw, String user_shop_name, String user_phone) {
+	public UserDTO(String user_id, String user_pw, String user_phone,String user_shop_name) {
 		super();
 		this.user_id = user_id;
 		this.user_pw = user_pw;
