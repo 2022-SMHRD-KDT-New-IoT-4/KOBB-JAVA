@@ -40,7 +40,7 @@ public class LoginProgram implements Command {
 		
 		System.out.println(dto.getUser_id());
 		System.out.println(dto.getUser_pw());
-		
+	
 		UserDTO row = dao.login(dto);
 		System.out.println(row);
 		
@@ -52,11 +52,10 @@ public class LoginProgram implements Command {
 			System.out.println("성공" + row.getUser_shop_name());
 			OutputStreamWriter writer = new OutputStreamWriter(response.getOutputStream());
 			
-			//아이디 , 패스워드. 이름
+			//아이디 , 패스워드 . 매장이름
 			writer.append(row.getUser_id());
 			writer.append(",");
 			writer.append(row.getUser_pw());
-			//온오프 제어 값
 			writer.append(".");
 			writer.append(row.getUser_shop_name());
 			
@@ -67,7 +66,7 @@ public class LoginProgram implements Command {
 			
 		}else {
 			System.out.println("실패");
-			response.getWriter().print("fuck");
+			response.getWriter().print("로그인 실패");
 			result = "로그인실패";
 		}
 	
