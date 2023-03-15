@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.buttoncontoller.buttonAndroid;
+import com.buttoncontoller.buttonProgram;
 import com.usercontrolloer.Command;
 import com.usercontrolloer.JoinProgram;
 import com.usercontrolloer.LoginProgram;
@@ -25,6 +26,8 @@ public class FrontController extends HttpServlet {
 	map = new HashMap<>();
 	map.put("Join.do", new JoinProgram());
 	map.put("Login.do", new LoginProgram());
+	map.put("button.do", new buttonProgram());
+	map.put("buttonAndroid.do", new buttonAndroid());
 	}
 
 
@@ -32,11 +35,11 @@ public class FrontController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String uri = request.getRequestURI();
-		System.out.println("요청 uri: " + uri);
+	//	System.out.println("요청 uri: " + uri);
 
 		String path = request.getContextPath();
 		String finalUrl = uri.substring(path.length() + 1);
-		System.out.println("잘라낸 url: " + finalUrl);
+	//	System.out.println("잘라낸 url: " + finalUrl);
 
 		String finalurl = uri.substring(path.length() + 1);
 

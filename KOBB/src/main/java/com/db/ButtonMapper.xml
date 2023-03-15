@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.kobb.model.ButtonDAO">
+  <!--  select 구문  -->
+  <select id="ButtonSelect" parameterType="ButtonDTO" resultType="ButtonDTO">
+select *
+from button_tb
+where serial_no =#{serial_no}
+</select>
+  <!--  update구문 -->
+  
+  
+  <update id="ButtonUpdate" parameterType="ButtonDTO">
+		update button_tb set
+		btn1 =#{btn1},
+		btn2 =#{btn2},
+		btn3 =#{btn3},
+		btn4 =#{btn4},
+		btn5 =#{btn5}
+		where serial_no =#{serial_no}
+	</update>
+  </mapper>

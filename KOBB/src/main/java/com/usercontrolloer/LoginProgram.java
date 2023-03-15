@@ -40,6 +40,10 @@ public class LoginProgram implements Command {
 		System.out.println(dto.getUser_id());
 		System.out.println(dto.getUser_pw());
 		
+		
+		
+		
+		
 		UserDTO row = dao.login(dto);
 		System.out.println(row);
 		
