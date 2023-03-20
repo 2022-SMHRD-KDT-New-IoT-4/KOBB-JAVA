@@ -5,10 +5,13 @@
 
 <configuration>
 
+
 	<typeAliases>
 		<!-- MemberMapper파일에서 사용할 type들의 별명을 지정해주는 공간 -->
 		<typeAlias type="com.kobb.model.UserDTO" alias="UserDTO" />
 		<typeAlias type="com.kobb.model.ButtonDTO" alias="ButtonDTO" />
+		<typeAlias type="com.kobb.model.MenuDTO" alias="MenuDTO" />
+		
 	</typeAliases>
 
 	<environments default="development">

@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.kobb.model.UserDAO;
 import com.kobb.model.UserDTO;
@@ -21,45 +22,40 @@ public class LoginProgram implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//한글 인코딩
-		request.setCharacterEncoding("UTF-8");
-		System.out.println("값이 들어오니?");
+		// Json 타입으로 키값과 함께 넘겨주기 위해 필요한 객채 생성 --> pom.xml 에 depen있어야함!
+		ObjectMapper objectMapper = new ObjectMapper();
+		
 		// 여기 result 는 null 값이여야만 함!~
 		String result =null;
 				 
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
+		String user_shop_name = request.getParameter("user_shop_name");
+		request.setCharacterEncoding("UTF-8");
 		
 		
 		UserDTO dto = new UserDTO();
 		
+		
 		dto.setUser_id(user_id);
 		dto.setUser_pw(user_pw);
-		
+		dto.setUser_shop_name(user_shop_name);
 		UserDAO dao = new UserDAO();
 		
-		System.out.println(dto.getUser_id());
-		System.out.println(dto.getUser_pw());
 		UserDTO row = dao.login(dto);
-		System.out.println(row);
-		
-		
 		
 		
 		
 		if(row != null) {		
-			System.out.println("성공" + row.getUser_shop_name());
-			OutputStreamWriter writer = new OutputStreamWriter(response.getOutputStream());
 			
 			//아이디 , 패스워드 . 매장이름
-			writer.append(row.getUser_id());
-			writer.append(",");
-			writer.append(row.getUser_pw());
-			writer.append(".");
-			writer.append(row.getUser_shop_name());
+			response.setContentType("application/json; charset=UTF-8");
+			response.setContentType("charset=UTF-8");
+			String user_info = objectMapper.writeValueAsString(row);
+			response.getWriter().print(user_info);
+			System.out.println("조회된 로그인 정보 :"+ user_info);
+	
 			
-			writer.flush(); // 100,12345
-			writer.close();
 			
 		
 			

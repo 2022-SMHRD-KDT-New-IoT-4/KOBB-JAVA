@@ -7,6 +7,7 @@
 
 <mapper namespace="com.kobb.model.UserDAO">
 	<!-- join구문 -->
+	
 	<insert id="join" parameterType="UserDTO">	
 		insert into user_tb
 	    values
@@ -19,5 +20,12 @@
 		from user_tb
 		where user_id = #{user_id} and user_pw = #{user_pw}
 	</select>
+	
+	<!-- menu 구문 -->
+	 <select id = "menu" parameterType="MenuDTO" resultType="MenuDTO">
+	  select *
+	  from menu_tb
+	  where user_id = #{user_id}
+	  </select>
 
 </mapper>

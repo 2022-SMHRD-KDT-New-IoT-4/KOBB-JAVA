@@ -15,6 +15,7 @@ import com.buttoncontoller.buttonProgram;
 import com.usercontrolloer.Command;
 import com.usercontrolloer.JoinProgram;
 import com.usercontrolloer.LoginProgram;
+import com.usercontrolloer.MenuProgram;
 
 
 @WebServlet("*.do")
@@ -28,6 +29,7 @@ public class FrontController extends HttpServlet {
 	map.put("Login.do", new LoginProgram());
 	map.put("button.do", new buttonProgram());
 	map.put("buttonAndroid.do", new buttonAndroid());
+	map.put("Menu.do", new MenuProgram());
 	}
 
 
