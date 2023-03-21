@@ -14,11 +14,11 @@ public class MenuDTO {
 	
 	private long menu_seq;
 	
-	private long menu_stock;
+	private String menu_status;
 	
 	private String menu_category;
 	
-	private double menu_img;
+	private String menu_img;
 
 	public String getUser_id() {
 		return user_id;
@@ -52,12 +52,12 @@ public class MenuDTO {
 		this.menu_seq = menu_seq;
 	}
 
-	public long getMenu_stock() {
-		return menu_stock;
+	public String getMenu_status() {
+		return menu_status;
 	}
 
-	public void setMenu_stock(long menu_stock) {
-		this.menu_stock = menu_stock;
+	public void setMenu_status(String menu_status) {
+		this.menu_status = menu_status;
 	}
 
 	public String getMenu_category() {
@@ -68,11 +68,11 @@ public class MenuDTO {
 		this.menu_category = menu_category;
 	}
 
-	public double getMenu_img() {
+	public String getMenu_img() {
 		return menu_img;
 	}
 
-	public void setMenu_img(double menu_img) {
+	public void setMenu_img(String menu_img) {
 		this.menu_img = menu_img;
 	}
 
